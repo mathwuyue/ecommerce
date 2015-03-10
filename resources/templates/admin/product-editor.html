@@ -1,0 +1,92 @@
+{% extends "templates/admin/admin-base.html" %}
+
+{% block title %}商品编辑器{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/ckeditor/config.js"></script>
+
+{% if modifiable = 1 %}
+这是一个已经发布的商品，无法直接修改。如果您修改，旧的商品信息会被下架存档；新的信息将被直接发布。
+{% endif %}
+
+{% if modifiable = -1 %}
+无法修改，这是一个已经下架的商品。搜索引擎和主页无法找到此商品，您不必担心。
+
+{% if product.see_also %}
+这个商品也可能被更新到了<a href="/admin/products/{{ product.see_also }}/modify/">这里</a>。
+{% endif %}
+
+{% endif %}
+
+{% if modifiable = 0 %}
+提醒：这是一个草稿，您可以随意修改。点击发布可以发布，但是发布之后将无法修改。
+{% endif %}
+
+<script>
+  function preview_image(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('preview').src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function publish_draft() {
+    document.getElementById('draft').value = 0;
+    document.getElementById('form').submit();
+  }
+</script>
+
+{% if modifiable = -1 %}
+<form>
+{% else %}
+<form method="POST" id="form" action="." enctype="multipart/form-data">
+{% endif %}
+
+  <table>
+    <tr><td>Title</td><td><input type="input" name="title" value="{{ product.title }}" /></td></tr>
+    <tr><td>Category</td>
+      <td>
+        <select name="category_id">
+          {% for category in category-list %}
+          {% ifequal category.id product.category_id %}
+          <option value="{{ category.id }}" selected="selected">{{ category.name }}</option>
+          {% else %}
+          <option value="{{ category.id }}">{{ category.name }}</option>
+          {% endifequal %}
+          {% endfor %}
+        </select>
+      </td>
+    </tr>
+    <tr><td>Content</td><td><textarea id="content-editor" name="content">{{ product.content }}</textarea></td></tr>
+    <tr><td>Photo</td>
+      <td>
+        <img id="preview" src="{{ product.photo }}"/>
+        <input type="file" name="file-upload" onChange="preview_image(this);"/>
+      </td>
+    </tr>
+    <tr><td>Link</td><td><input type="input" name="external_link" value="{{ product.external_link }}" /></td></tr>
+    <tr><td>Purchase Link</td><td><input type="input" name="external_purchase" value="{{ product.external_purchase }}" /></td></tr>
+  </table>
+
+  <input type="input" id="draft" name="draft" value="{% if product.draft = 0 %}0{% else %}1{% endif %}" style="display: none"/>
+
+  {% if modifiable = 0 %}
+  <input type="submit" value="保存" />
+  <input type="button" value="发布" onClick="publish_draft()"/>
+  {% endif %}
+
+  {% if modifiable = 1 %}
+  <input type="submit" value="保存更新的商品信息">
+  {% endif %}
+</form>
+
+<script>
+  CKEDITOR.replace('content-editor');
+</script>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "templates/base.html" %}
+{% block title %}折扣信息{% endblock %}
+
+{% block search-bar %}
+{% include "templates/search-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div id="main-content" class="container">
+  <h1>{{ product.title }}</h1>
+  <div class="container-fluid">
+    <div class="col-md-2">
+      <img src="{{ product.photo }}" alt="" />
+    </div>
+    <div class="col-md-8">
+      {{ product.content|safe }}
+
+      <div>{{ product.external_link }}</div>
+      <div>{{ product.publish_date }}</div>
+    </div>
+
+    {% if product.expired = 1%}
+    <div>
+      该折扣信息已经过期，<a href="/detail/{{ product.see_also }}/">点击这里查看最新版本</a>。
+    </div>
+
+    {% endif %}
+  </div>
+
+</div>
+
+{% endblock %}

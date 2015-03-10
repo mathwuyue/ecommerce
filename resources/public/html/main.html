@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="Rum and Raisin Studio">
+
+		<title>洋白菜首页</title>
+
+		<!-- Bootstrap Framework -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->	
+		<link href="../css/main.css" rel="stylesheet">
+	</head>
+
+	<body role="document">
+		<!-- Fixed navbar -->
+		<nav id="navbar">
+			<div class="container">
+ 				<div class="row">
+  					<a href="#" class="col-md-1 nav-bar nav-main nav-border">首页</a>
+  					<a href="#" class="col-md-1 nav-bar nav-main nav-border">关于我们</a>
+  					<a href="#" class="col-md-1 nav-bar nav-main nav-border">商品</a>
+  					<a href="#" class="col-md-1 nav-bar nav-main">帮助</a>
+					<a href="#" class="col-md-2 col-md-offset-2 nav-bar nav-main nav-border">登录或注册</a>
+					<div id="fav" class="col-md-1 nav-bar nav-border">
+						<img src="../media/fav_icon.png">
+						<div id="fav-counter">30</div>
+					</div>
+					<div id="search" class="col-md-3 nav-bar">
+						<img src="../media/search_icon.png" alt="search icon"/>
+						<form class="form-inline" role="form"><input type="text" name="search" class="form-control" id="search-form" placeholder="搜索内容"></form>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+
+		<!-- Slide -->
+		<div id="product-slide" class="container-fluid">
+			<div class="container">
+				<div id="slide-content" class="carousel slide" data-ride="carousel">
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active" data-slide="1">
+				    	<a href="#">
+				      	<img src="../media/1.png" alt="Jimmy Choo">
+				      	<description>
+				      		<div class="price big">7.5折</div>
+				      		<h1>Jimmy Choo<br/>春夏季款特惠</h1>
+				      		<p>半年一度亲友热卖会，全场大部分服饰/鞋履/<br/>手袋等7.5折优惠。折扣码: “DISCOUNT</p>
+				      	</description>
+				      	</a>
+				    </div>
+				    <div class="item" data-slide="2">
+				    	<a href="#">
+				     	<img src="../media/2.png" alt="Anna Field">
+				      	<description>
+				      		<div class="price big">6折</div>
+				      		<h1>Anna Field<br/>秋冬季款特惠</h1>
+				      		<p>半年一度亲友热卖会，全场大部分服饰/鞋履/<br/>手袋等7.5折优惠。折扣码: “DISCOUNT</p>
+				      	</description>
+				      	</a>
+				    </div>			  
+				  </div>
+				</div>
+			</div>
+			<!-- slide control -->
+			<div id="slide-control">
+				<div class="container">
+					<div class="row">
+						<a href="#">
+						<div id="slide-control-1" class="col-md-2 slide-control-item active" data-slide-to="0">
+							<div class="slide-control-header"></div>
+							<div class="slide-control-content"><h3>Jimmy Choo</h3><description>全场7.5折优惠</description>
+							</div>
+						</div>
+						</a>
+						<div id="slide-control-2" class="col-md-2 slide-control-item" data-slide-to="1">
+							<div class="slide-control-header"></div>
+							<div class="slide-control-content"><h3>Anna Field</h3><description>全场6折优惠</description>
+							</div>
+						</div>
+						<div id="slide-control-3" class="col-md-2 slide-control-item">
+							<div class="slide-control-header"></div>
+							<div class="slide-control-content"><h3>Jimmy Choo</h3><description>全场7.5折优惠</description>
+							</div>
+						</div>
+						<div id="slide-control-4" class="col-md-2 slide-control-item">
+							<div class="slide-control-header"></div>
+							<div class="slide-control-content"><h3>Anna Field</h3><description>全场6折优惠</description>
+							</div>
+						</div>
+						<div id="slide-control-5" class="col-md-2 slide-control-item">
+							<div class="slide-control-header"></div>
+							<div class="slide-control-content"><h3>Jimmy Choo</h3><description>全场7.5折优惠</description>
+							</div>
+						</div>
+						<div id="slide-control-6" class="col-md-2 slide-control-item">
+							<div class="slide-control-header"></div>
+							<div class="slide-control-content"><h3>Anna Field</h3><description>全场6折优惠</description>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- category -->
+		<div id="category" class="container-fluid">
+			<div id="category-content" class="container">
+				<a href="#"><img src="../media/e.png"></a>
+				<a href="#"><img src="../media/f.png"></a>
+				<a href="#"><img src="../media/l.png"></a>
+			</div>
+		</div>
+
+		<!-- main content -->
+		<div id="main-content" class="container-fluid">
+			<div class="container">
+				<h1>最新折扣</h1>
+				<div class="row">
+					<div id="content-item-1" class="content-item col-md-4 left">
+						<img src="../media/img.png">
+						<div class="caption">Event &amp; Odd</div>
+						<div class="price"> $150 </div>
+						<description>
+							<h3>夏季特惠</h3>
+							<p>半年一度亲友热卖会
+							全场大部分服饰/鞋履/手袋等7.5折优惠</p>
+						</description>
+					</div>
+					<div id="content-item-2" class="content-item col-md-4 middle">
+						<img src="../media/img.png">
+						<div class="caption">Event &amp; Odd</div>
+						<div class="price"> $150 </div>
+						<div class="outdate">已过期</div>
+						<description>
+							<h3>夏季特惠</h3>
+							<p>半年一度亲友热卖会<br/>
+							全场大部分服饰/鞋履/手袋等7.5折优惠</p>
+						</description>
+					</div>
+					<div id="content-item-3" class="content-item col-md-4 right">
+						<img src="../media/img.png">
+						<div class="caption">Event &amp; Odd</div>
+						<div class="price"> $150 </div>
+						<description>
+							<h3>夏季特惠</h3>
+							<p>半年一度亲友热卖会
+							全场大部分服饰/鞋履/手袋等7.5折优惠</p>
+						</description>
+					</div>
+				</div>
+				<div class="row">
+					<div id="content-item-4" class="content-item col-md-4 left">
+						<img src="../media/img.png">
+						<div class="caption">Event &amp; Odd</div>
+						<div class="price"> $150 </div>
+						<description>
+							<h3>夏季特惠</h3>
+							<p>半年一度亲友热卖会
+							全场大部分服饰/鞋履/手袋等7.5折优惠</p>
+						</description>
+					</div>
+					<div id="content-item-5" class="content-item col-md-4 middle">
+						<img src="../media/img.png">
+						<div class="caption">Event &amp; Odd</div>
+						<div class="price"> $150 </div>
+						<description>
+							<h3>夏季特惠</h3>
+							<p>半年一度亲友热卖会
+							全场大部分服饰/鞋履/手袋等7.5折优惠</p>
+						</description>
+					</div>
+					<div id="content-item-6" class="content-item col-md-4 right">
+						<img src="../media/img.png">
+						<div class="caption">Event &amp; Odd</div>
+						<div class="price"> $150 </div>
+						<img src="../media/final.png" class="final">
+						<description>
+							<h3>夏季特惠</h3>
+							<p>半年一度亲友热卖会<br/>
+							全场大部分服饰/鞋履/手袋等7.5折优惠</p>
+						</description>
+					</div>	
+				</div>
+				<div id="pager">下一页</div>
+			</div>
+		</div>
+
+		<!-- bulletin board -->
+		<div id="bulletin-board" class="container-fluid">
+			<div id="notice" class="container">
+				<h2>公告栏</h2>
+				<p>这里可以写一些公告</p>
+			</div>
+			<div id="promotion" class="container">
+				
+			</div>
+		</div>
+
+		<!-- footer -->
+		<div id="footer" class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div id="legal" class="col-md-3"> Copyright &copy; 易淘宝 2014 <br/> Designed by Rum &amp; Raisin </div>
+					<div id="contact" class="col-md-4 col-md-offset-5"> <a href="#">主页</a> / <a href="#">技术支持</a> / <a href="#">条款声明</a> / <a href="#">常见问题</a> / <a href="#">联系我们</a> </div> 
+				</div>
+			</div>
+		</div>
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="../js/ie10-viewport-bug-workaround.js"></script>
+	<script src="../js/main.js"></script>
+	</body>
+</html>

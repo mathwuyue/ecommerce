@@ -1,0 +1,22 @@
+{% extends "templates/base.html" %}
+{% block title %}搜索{% endblock %}
+
+{% block search-bar %}
+{% include "templates/search-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% if init %}
+
+Please input terms to search...
+
+{% else %}
+
+<div id="main-content" class="container">
+  {% include "templates/product-list.html" %}
+</div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!-- main content -->
+{% block nav-tab %}
+{% endblock %}
+
+{% for product in products %}
+<div class="product-item">
+  <div class="product-info">
+    <div class="row">
+      <div class="col-md-3 product-photo"><img src="{{ product.photo }}"/></div>
+      <div class="col-md-9">
+      	<h1><a href="/detail/{{ product.id }}/">{{ product.title }}</a></h1>
+        <div class="product-content">{{ product.content|safe }}</div>
+      </div>
+    </div>
+    {% ifequal session.user.username "admin" %}
+    <div class="row">
+      <div class="col-md-offset-9">
+        管理员工具:
+        {% include "templates/admin/product-edit-links.html" %}
+      </div>
+    </div>
+    {% endifequal %}
+  </div>
+</div>
+{% endfor %}
+
+
+<!-- pager -->
+<div id="pager" class="container">
+  <div class="container">
+    <div class="row">
+      <div class="pages col-md-4 col-offset-4">
+	{% if not cur-page = 1 %}
+	<div class="page">Prev</div>
+	{% endif %}
+        
+	{% for page in page-range %}
+	<div class="page">{{ page }}</div>
+	{% endfor %}
+        
+	{% ifequal cur-page max-page %}
+	{% else %}
+	<div class="page">Next</div>
+	{% endifequal %}
+      </div>
+    </div>
+  </div>
+</div>

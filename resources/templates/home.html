@@ -1,0 +1,36 @@
+{% extends "templates/base.html" %}
+{% block title %}首页{% endblock %}
+
+{% block search-bar %}
+{% include "templates/search-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+{% include "templates/slide-ad.html" %}
+
+
+{% if category-path %}
+<div class="container">
+  {% for category in category-path %}
+  -&nbsp;<a href="/category/{{ category.id }}/?mode={{ query-mode }}">{{ category.name }}</a>
+  {% endfor %}
+</div>
+{% endif %}
+
+<div id="main-content" class="container">
+  <div class="main-tabs">
+    <ul class="nav nav-tabs">
+      <li role="presentation"{% ifequal query-mode "pinned" %} class="active"{% endifequal %}><a href="?mode=pinned">置顶</a></li>
+      <li role="presentation"{% ifequal query-mode "newest" %} class="active"{% endifequal %}><a href="?mode=newest">最新</a></li>
+    </ul>
+  </div>
+  {% include "templates/product-list.html" %}
+</div>
+
+{% comment %}
+{% include "templates/bulletin.html" %}
+{% endcomment %}
+
+{% endblock %}

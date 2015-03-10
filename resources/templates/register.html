@@ -1,0 +1,44 @@
+{% extends "templates/base.html" %}
+{% block title %}注册{% endblock %}
+{% block content %}
+
+<script>goog.require("cbg.user");</script>
+<form method="POST" action="." onsubmit="return cbg.user.check_submit();">
+  <table>
+    <tr><td>用户名</td><td><input type="text" name="username" id="username" value="{{ username }}" /></td><td class="error">{{ error.username }}</td></tr>
+    <tr><td>密码</td><td><input type="password" name="password" id="password" value="" /></td><td class="error" id="password-error"></td></tr>
+    <tr><td>重复密码</td><td><input type="password" id="password-confirm" value="" /></td></tr>
+    <tr><td>Email</td><td><input type="text" name="email" value="{{ email }}" /></td><td class="error">{{ error.email }}</td></tr>
+    <tr><td>许可协议</td><td>
+      <div>
+	<div style="width:500px;height:300px;border: 1px solid black;overflow-y:scroll">
+        可爱什么的不可以说出来哦～
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+        <p>测试测试</p>
+	</div>
+      </div>
+      <div><label><input type="checkbox" id="seen"/>我已经看过啦！</label></div>
+    </td>
+    <td class="error" id="seen-error"></td></tr>
+    <tr><td>验证码</td><td></td></tr>
+    <tr><td></td><td><input type="submit" value="注册" /></td></tr>
+  </table>
+</form>
+
+{% endblock %}

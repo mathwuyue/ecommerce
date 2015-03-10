@@ -1,0 +1,20 @@
+<div class="edit-links">
+  <a href="/admin/products/{{ product.id }}/modify/">
+    修改"
+    {% if product.expired = 1 %}
+    <strike>{{ product.title }}</strike>
+    {% else %}
+    {% if product.draft = 1 %}[Draft] {% endif %}
+    {{ product.title }}
+    {% endif %}
+    "
+  </a>
+  {% if product.draft = 1 %}
+  <a href="/admin/products/{{ product.id }}/expire/" onclick="return confirm('确定要删除么？')">删除</a>
+  {% else %}
+  {% if product.expired = 0 %}
+  <a href="/admin/products/{{ product.id }}/expire/" onclick="return confirm('确定要下架么？')">下架</a>
+  <a href="/admin/products/{{ product.id }}/toogle-pin/" onclick="return confirm('确定改变置顶么？')">{% if product.pin = 1 %}解除置顶{% else %}置顶{% endif %}</a>
+  {% endif %}
+  {% endif %}
+</div>

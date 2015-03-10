@@ -1,0 +1,44 @@
+{% extends "templates/admin/admin-base.html" %}
+
+{% block title %}商品类别编辑器{% endblock %}
+
+{% block content %}
+
+{% if node.parent > 0 %}
+<div>
+  <a href="/admin/category/{{ node.parent }}/">Parent</a>
+</div>
+{% endif %}
+
+<form method="POST" action="">
+  <input type="input" name="name" value="{{ node.name }}" />
+  <input type="submit" name="" value="Rename" />
+</form>
+
+<div>
+  <a href="new/">+</a>
+</div>
+
+{% if children|length-is:0 %}
+<div>没有任何子类别了。</div>
+
+{% else %}
+
+子类别：
+<ul>
+{% for child in children %}
+<li><a href="/admin/category/{{ child.id }}/">{{ child.name }}</a> <a href="/admin/category/{{ child.id }}/remove/">REMOVE</a></li>
+{% endfor %}
+</ul>
+
+{% endif %}
+
+<div>
+  Products:
+  <a href="products/new/">+</a>
+  {% for product in products %}
+  {% include "templates/admin/product-edit-links.html" %}
+  {% endfor %}
+</div>
+
+{% endblock %}

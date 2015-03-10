@@ -1,0 +1,27 @@
+.major-category {
+    font-size: 16px;
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.nav-bar {
+    height: 24px;
+}
+
+.nav-bar .major-category .minor-category {
+    display: none;
+}
+
+.full-nav-bar {
+    height: auto;
+}
+
+.full-nav-bar .major-category .minor-category {
+    display: block;
+}
+
+.edit-links a {
+    margin-left: 2px;
+    margin-right: 2px;
+}

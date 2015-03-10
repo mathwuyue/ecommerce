@@ -1,0 +1,20 @@
+{% extends "templates/base.html" %}
+{% block title %}用户信息{% endblock %}
+{% block content %}
+
+<form method="POST" id="info-form" action=".">
+  <table>
+    <tr><td>Email</td><td><input type="" name="email" value="{{ user.email }}" /></td><td class="error"></td></tr>
+    <tr><td>真实姓名</td><td><input type="" name="real_name" value="{{ user.real_name }}" /></td><td class="error"></td></tr>
+    <tr><td>电话</td><td><input type="" name="phone" value="{{ user.phone }}" /></td><td class="error"></td></tr>
+    <tr><td>国家</td><td><input type="" name="country" value="{{ user.contry }}" /></td><td class="error"></td></tr>
+    <tr><td>省份</td><td><input type="" name="province" value="{{ user.province }}" /></td><td class="error"></td></tr>
+    <tr><td>城市</td><td><input type="" name="city" value="{{ user.city }}" /></td><td class="error"></td></tr>
+    <tr><td>地址</td><td><input type="" name="address" value="{{ user.address }}" /></td><td class="error"></td></tr>
+    <tr><td>邮政编码</td><td><input type="" name="zipcode" value="{{ user.zipcode }}" /></td><td class="error"></td></tr>
+    <tr><td>身份证号码</td><td><input type="" name="id_number" value="{{ user.id_number }}" /></td><td class="error"></td></tr>
+  </table>
+  <input type="submit" name="" value="OK" />
+</form>
+
+{% endblock %}

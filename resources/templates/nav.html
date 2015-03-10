@@ -1,0 +1,12 @@
+<ul class="full-nav-bar nav navbar-nav">
+  {% for major in major-category %}
+  <li class="major-category dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ major.name }}</a>
+    <ul class="minor-category dropdown-menu" role="menu">
+      {% for child in major.children %}
+      <li><a href="/category/{{ child.id }}/?mode={{ query-mode }}">{{ child.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>

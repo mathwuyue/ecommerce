@@ -1,0 +1,21 @@
+{% extends "templates/base.html" %}
+{% block title %}登陆{% endblock %}
+{% block content %}
+
+{% if error %}
+<div class="error">{{ error }}</div>
+{% endif %}
+
+{% if hint %}
+<div class="hint">{{ hint }}</div>
+{% endif %}
+
+<form method="POST" action=".">
+  <table>
+    <tr><td>用户名</td><td><input type="text" name="username"/></td></tr>
+    <tr><td>密码</td><td><input type="password" name="password"/></td></tr>
+    <tr><td></td><td>  <input type="submit" value="登陆" /></td></tr>
+  </table>
+</form>
+
+{% endblock %}
